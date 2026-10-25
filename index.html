@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f7f2ff">
-<meta name="description" content="RE:VIVE 2035 — simulasi interaktif layanan transformasi pakaian lama berbasis prinsip fashion sirkular.">
+<meta name="description" content="RE:VIVE 2035 — studio transformasi fashion sirkular yang mempertemukan ide desain ulang pakaian dengan keterampilan penjahit lokal.">
 <title>RE:VIVE 2035 — Fashion Transformation Studio</title>
 <style>
 :root{
@@ -173,19 +173,19 @@ h2{color:#25265b;}
     <h1>Wear it.<br><span>Reinvent it.</span></h1>
     <p class="lead">Lemari penuh bukan berarti harus membeli baru. RE:VIVE menghubungkan ide desain ulang dengan keterampilan penjahit lokal—agar pakaian yang kamu miliki bisa digunakan lebih lama.</p>
     <div class="pillrow"><span class="pill">AI-assisted concept</span><span class="pill">Local tailors</span><span class="pill">Circular service</span></div>
-    <div class="story"><h3>Bukan sekadar aplikasi.</h3><p>Ini adalah simulasi model bisnis <strong>Fashion Transformation as a Service</strong>: konsumen memilih transformasi, mitra UMKM mengerjakan produk fisik, dan dampaknya dievaluasi secara transparan.</p></div>
+    <div class="story"><h3>Bukan sekadar aplikasi.</h3><p>RE:VIVE mengembangkan konsep <strong>Fashion Transformation as a Service</strong>: konsumen merancang perubahan gaya, mitra penjahit mengerjakan transformasi fisik, dan informasi dampak ditampilkan secara transparan.</p></div>
   </aside>
   <div>
     <section class="mobile" aria-label="Prototipe interaktif RE:VIVE 2035">
       <header class="top">
-        <div class="topbar"><div class="brand">RE<span style="color:#ec4f99">:</span>VIVE <span style="font-weight:400">2035</span></div><span class="demobadge">PROTOTIPE UTS</span></div>
+        <div class="topbar"><div class="brand">RE<span style="color:#ec4f99">:</span>VIVE <span style="font-weight:400">2035</span></div><span class="demobadge">CIRCULAR FASHION</span></div>
         <div class="smalltop" id="stepName">Tahap 1 dari 6 · Mulai</div>
         <nav class="thread" id="thread" aria-label="Tahapan simulasi"></nav>
       </header>
       <main class="screen" id="screen" aria-live="polite"></main>
       <footer class="nav" id="nav"></footer>
     </section>
-    <p class="footer">Demonstrasi akademik · Tanpa AI atau transaksi sungguhan · Data contoh diberi label</p>
+    <p class="footer">Pratinjau layanan · Fitur AI dan transaksi belum aktif · Data contoh ditandai</p>
   </div>
 </div>
 <script>
@@ -232,7 +232,7 @@ function goto(step){if(step>state.maxStep+1||step<0||step>5)return;
  state.step=step;state.maxStep=Math.max(state.maxStep,step);paint();window.scrollTo({top:0,behavior:'smooth'});}
 function cardThumb(s){return `<span class="garment-holder">${garment(s.shape,s.color)}</span>`;}
 function view(){let s=sample(),o=chosen(),h='';
- if(state.step===0){h=`<section class="hero"><span class="kicker">Your old clothes, your next style</span><h2>Ubah yang lama jadi gaya baru.</h2><p>Jelajahi transformasi pakaian bersama penjahit lokal. Kamu pilih desain; mereka memastikan hasilnya benar-benar bisa dibuat.</p><div class="mini-hero">${garment('shirt','#b4c5f5')}<span class="transform-arrow">→</span>${garment('blouse','#f7a9cb')}</div></section><div class="feature-grid"><div class="feature"><span class="ico">✦</span><strong>Design Studio</strong><span>Visualisasi pilihan redesign</span></div><div class="feature"><span class="ico">✂</span><strong>Penjahit lokal</strong><span>Validasi dan produksi fisik</span></div><div class="feature"><span class="ico">↻</span><strong>Lebih lama dipakai</strong><span>Fokus pada pakaian yang sudah ada</span></div><div class="feature"><span class="ico">◈</span><strong>Dampak transparan</strong><span>Asumsi terlihat, bukan klaim hijau</span></div></div><div class="finenote"><b>Ini prototipe interaktif.</b> Rekomendasi desain, nama mitra, harga dan indikator dampak merupakan simulasi untuk demonstrasi UTS.</div>`;}
+ if(state.step===0){h=`<section class="hero"><span class="kicker">Your old clothes, your next style</span><h2>Ubah yang lama jadi gaya baru.</h2><p>Jelajahi transformasi pakaian bersama penjahit lokal. Kamu pilih desain; mereka memastikan hasilnya benar-benar bisa dibuat.</p><div class="mini-hero">${garment('shirt','#b4c5f5')}<span class="transform-arrow">→</span>${garment('blouse','#f7a9cb')}</div></section><div class="feature-grid"><div class="feature"><span class="ico">✦</span><strong>Design Studio</strong><span>Visualisasi pilihan redesign</span></div><div class="feature"><span class="ico">✂</span><strong>Penjahit lokal</strong><span>Validasi dan produksi fisik</span></div><div class="feature"><span class="ico">↻</span><strong>Lebih lama dipakai</strong><span>Fokus pada pakaian yang sudah ada</span></div><div class="feature"><span class="ico">◈</span><strong>Dampak transparan</strong><span>Asumsi terlihat, bukan klaim hijau</span></div></div><div class="finenote"><b>Jelajahi pengalaman RE:VIVE.</b> Rekomendasi desain, nama mitra, estimasi harga, dan indikator dampak saat ini masih berupa contoh. Fitur AI dan pemesanan langsung belum tersedia.</div>`;}
  if(state.step===1){h=`<span class="kicker">01 · Wardrobe scan</span><h2>Mulai dari pakaian yang kamu punya.</h2><p class="subtitle">Pakai foto pakaianmu sendiri, atau coba contoh agar kamu bisa menjelajahi seluruh alur.</p><div class="mode-tabs"><button type="button" class="mode" data-mode="photo" aria-pressed="${state.mode==='photo'}">📷 Unggah foto sendiri</button><button type="button" class="mode" data-mode="sample" aria-pressed="${state.mode==='sample'}">✦ Coba contoh</button></div>`;
   if(state.mode==='photo'){h+=`<div class="dropzone"><div class="uploadicon">↥</div><strong>Pilih foto pakaian</strong><p class="subtitle" style="margin:7px 0 4px">JPG, PNG, atau WebP · maks. 8 MB</p><input id="photoFile" class="uploadinput" type="file" accept="image/jpeg,image/png,image/webp"><label for="photoFile" class="file-button">Pilih dari galeri</label>${state.photoURL?`<div class="file-preview"><img id="photoPreview" alt="Foto pakaian yang dipilih"><div><strong>Foto dipilih</strong><small id="photoName"></small><button type="button" class="linkbtn" id="removePhoto">Hapus foto</button></div></div>`:''}</div><p class="subtitle" style="margin-bottom:8px">Pilih kategori pakaian pada foto (tidak dideteksi otomatis):</p>`;}
   else h+='<p class="subtitle" style="margin-bottom:8px">Pilih salah satu sampel untuk simulasi:</p>';
