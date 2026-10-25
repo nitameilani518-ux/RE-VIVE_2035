@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#153b32">
+<meta name="theme-color" content="#f7f2ff">
 <meta name="description" content="RE:VIVE 2035 — simulasi interaktif layanan transformasi pakaian lama berbasis prinsip fashion sirkular.">
 <title>RE:VIVE 2035 — Fashion Transformation Studio</title>
 <style>
@@ -32,6 +32,138 @@ h2{font:700 1.66rem/1.17 Georgia,serif;letter-spacing:-.035em;margin:0 0 10px;co
 @media(max-width:850px){.page{display:block;max-width:540px;padding:12px 13px 28px}.sidebar{position:static;padding:8px 8px 20px}.sidebar h1{font-size:2.8rem;margin:10px 0 8px}.sidebar .lead{font-size:.89rem;margin:0}.sidebar .story,.sidebar .pillrow{display:none}.mobile{border-radius:25px}}
 @media(max-width:380px){.page{padding:6px}.mobile{border-radius:20px}.top{padding:17px 17px 0}.screen{padding:22px 17px 12px}.hero{margin:-22px -17px 15px}.nav{padding:13px 17px 19px}.stepdot{width:28px;height:28px;flex-basis:28px}.feature-grid{gap:8px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+/* RE:VIVE 2035 — Colorful Pastel Edition · visual-only theme */
+:root {
+ --bg:#f7f3ff; --panel:#ffffff; --cream:#f5f2ff; --ink:#23224d;
+ --forest:#25265c; --forest2:#7450b7; --muted:#6b6e91; --line:#e2dcf8;
+ --lime:#ecdffe; --lime-deep:#d7c2fa; --coral:#ff5d9b;
+ --sage:#e9e8ff; --warn:#fff4d9; --radius:20px;
+}
+html {background:#f7f3ff;}
+body {
+ background:
+  radial-gradient(circle at 6% 2%,rgba(255,194,221,.85),transparent 33%),
+  radial-gradient(circle at 92% 12%,rgba(192,209,255,.94),transparent 34%),
+  radial-gradient(circle at 82% 89%,rgba(232,210,255,.8),transparent 36%),
+  radial-gradient(circle at 5% 85%,rgba(255,231,189,.55),transparent 38%),
+  #f7f3ff;
+ color:var(--ink);
+}
+.page {max-width:1160px;gap:60px;}
+.eyebrow {color:#754cbb;letter-spacing:.14em;}
+.eyebrow:before {background:#fa629f;box-shadow:0 0 0 5px #ffdbed;}
+.sidebar h1 {color:#25265b;text-shadow:0 4px 18px rgba(101,83,177,.06);}
+.sidebar h1 span {color:#e7478a;}
+.sidebar .lead {color:#515779;}
+.pillrow .pill {background:#fff;border-color:#e5dbfa;color:#56448f;box-shadow:0 4px 13px rgba(92,73,143,.05);}
+.pillrow .pill:nth-child(1){background:#ffe0ef;border-color:#ffc5df;color:#a52266;}
+.pillrow .pill:nth-child(2){background:#e7ecff;border-color:#c9d3ff;color:#3455a0;}
+.pillrow .pill:nth-child(3){background:#fff2d4;border-color:#ffe0a3;color:#79550a;}
+.sidebar .story{border-top-color:#d7c9f2;}
+.sidebar .story h3{color:#312e6b;}
+.sidebar .story p{color:#646486;}
+.sidebar .story strong{color:#8b3ea7;}
+.mobile{border:1px solid #e5ddfa;box-shadow:0 30px 95px rgba(63,49,136,.17),0 10px 25px rgba(226,93,147,.07);background:#fff;border-radius:30px;}
+.top{background:linear-gradient(180deg,#fffafd 0%,#fff 100%);}
+.brand{color:#23245a;letter-spacing:-.035em;}
+.demobadge{background:#fff0c8;color:#76500d;border:1px solid #ffe3a0;}
+.smalltop{color:#7d75a2;}
+.stepdot{background:#f5f0ff;border-color:#dfd2fa;color:#9383bc;}
+.stepdot.is-current{background:#f34a92;border-color:#f34a92;color:#fff;box-shadow:0 3px 12px rgba(243,74,146,.27);}
+.stepdot.is-done{background:#ecdfff;color:#7b43be;border-color:#c9aaf7;}
+.stepline{background:#e6dcfb;}
+.stepline.is-done{background:linear-gradient(90deg,#a88be9,#f877ad);}
+h2{color:#25265b;}
+.subtitle{color:#6c6e91;}
+.kicker{color:#a448ad;}
+.hero{
+ background:linear-gradient(135deg,#1c2059 0%,#453d9c 49%,#9b4fbc 75%,#e9559c 100%);
+ color:#fff;
+ isolation:isolate;
+ padding-bottom:31px;
+}
+.hero:before{width:235px;height:235px;border:1px solid rgba(255,255,255,.22);right:-92px;top:-110px;box-shadow:0 0 0 40px rgba(255,255,255,.035),0 0 0 80px rgba(255,255,255,.025);}
+.hero:after{content:'✦  ✳  ✧';position:absolute;right:13px;top:47px;font:700 1.5rem Georgia,serif;letter-spacing:16px;color:#ffdb93;opacity:.82;transform:rotate(-16deg);pointer-events:none;z-index:-1;}
+.hero .kicker{color:#ffe49f;}
+.hero h2{color:#fff;max-width:380px;}
+.hero p{color:#f6ebff;}
+.mini-hero{background:linear-gradient(145deg,rgba(242,226,255,.2),rgba(170,203,255,.16));border:1px solid rgba(255,255,255,.35);box-shadow:inset 0 1px 8px rgba(255,255,255,.06);}
+.transform-arrow{color:#ffd774;text-shadow:0 2px 14px #ffdb9eaa;}
+.feature-grid{gap:11px;}
+.feature{background:#f8f3ff;border-color:#e4d9ff;box-shadow:0 4px 14px rgba(75,56,116,.03);}
+.feature:nth-child(1){background:#ffedf5;border-color:#ffd4e6;}
+.feature:nth-child(2){background:#ebf2ff;border-color:#cddffd;}
+.feature:nth-child(3){background:#fff6df;border-color:#ffebb0;}
+.feature:nth-child(4){background:#efeaff;border-color:#ddd1fd;}
+.feature strong{color:#2c2d66;}
+.feature span{color:#686b8b;}
+.feature .ico{font-size:1.4rem;color:#e95092;}
+.feature:nth-child(2) .ico{color:#5b85db;}
+.feature:nth-child(3) .ico{color:#c28a1b;}
+.feature:nth-child(4) .ico{color:#8c63d7;}
+.mode{background:#f7f4ff;border-color:#e2dcfb;color:#666494;}
+.mode[aria-pressed=true]{background:linear-gradient(115deg,#e64e91,#aa61ca);border-color:#da569c;color:#fff;box-shadow:0 5px 17px rgba(215,66,151,.2);}
+.option{border:1.5px solid #e5dff5;background:#fff;}
+.option:hover{border-color:#f7a5cd;}
+.option[aria-pressed=true]{background:#fff0f7;border-color:#f262a0;box-shadow:0 0 0 2px #ffe0ed,0 8px 20px rgba(222,84,156,.08);}
+.option strong{color:#272962;}
+.option small{color:#747492;}
+.option .garment{background:#eef0ff;}
+.badgelow{background:#fff0cb;color:#8c5d0d;}
+.dropzone{background:linear-gradient(145deg,#f4f0ff,#f0f7ff);border-color:#c2a8f4;}
+.file-button{background:linear-gradient(110deg,#e95096,#b256cd);box-shadow:0 6px 19px rgba(225,78,153,.19);}
+.uploadinput:focus-visible + .file-button{outline-color:#6d58ce;}
+.file-preview{border-color:#dac9fa;}
+.linkbtn{color:#ae3f86;}
+.finenote{border-left:4px solid #9a81e4;padding:10px 12px;background:#f4f0ff;color:#57517c;}
+.warn{border-left:4px solid #eda747;background:#fff4da;color:#765720;}
+.error{border-color:#ffb5cd;background:#fff0f6;color:#a62d64;}
+.compare{background:radial-gradient(circle at 50% 40%,#fff,#e9edff);}
+.compare .after{background:#ffe9f5;}
+.compare .divider{background:#ee4e9e;}
+.compare .divider:after{color:#ec408e;}
+.badgeleft,.badgeright,.compare-card .cornerlabel{background:#292b69;color:white;}
+.badgeright{background:#df488f;}
+.compare-card{background:#edf0ff;border-color:#e1d9fb;}
+.compare-card:nth-child(2){background:#fff0f7;}
+.range{accent-color:#ed529d;}
+.metric{border-bottom-color:#ebe4fb;}
+.metric strong{color:#393170;}
+.metric span{color:#676d8a;}
+.metric.emphasis{background:#fff0f8;margin:10px -8px 0;padding:12px 8px;border-radius:10px;border-bottom-color:transparent;}
+.metric.emphasis strong{color:#bc357d;}
+.order-status{background:#f1ecff;border-color:#d6c5fa;}
+.order-status strong{color:#46308c;}
+.order-status p{color:#5e5c87;}
+.action-inline{background:linear-gradient(105deg,#f45198,#ae56c8);box-shadow:0 7px 20px rgba(225,73,145,.17);}
+.action-inline:disabled{background:#b4aecf;box-shadow:none;}
+.stat{background:linear-gradient(130deg,#fff0f8,#f0eaff);border-color:#ebd2f4;}
+.stat .value{color:#a23f99;}
+.stat small{color:#6d6a8c;}
+.sliderline strong{color:#e14990;}
+.progressbar{background:#e9e3fb;}
+.progressbar span{background:linear-gradient(90deg,#9c85eb 0%,#f45b9e 65%,#ffbf6e 100%);}
+.nav{border-top:1px solid #ede5fa;background:#fff;}
+.btn{background:linear-gradient(115deg,#f14a93,#b14fc7);border-color:#d955a9;color:#fff;box-shadow:0 8px 19px rgba(218,76,154,.15);transition:transform .16s,box-shadow .16s;}
+.btn:hover:not(:disabled),.action-inline:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 10px 20px rgba(218,76,154,.2);}
+.btn.secondary{color:#51418f;border-color:#d8ccf5;background:#fff;box-shadow:none;}
+.btn:disabled{opacity:.48;box-shadow:none;}
+.btn:focus-visible,.option:focus-visible,.stepdot:focus-visible,.mode:focus-visible{outline:3px solid #8271e7;outline-offset:3px;}
+.footer{color:#767293;}
+.no-list li{color:#626486;}
+.no-list li:before{color:#e45294;}
+@media(max-width:850px){
+ .page{padding:13px 13px 30px;}
+ .sidebar{padding-bottom:17px;}
+ .sidebar h1{font-size:2.75rem;}
+ .sidebar .lead{color:#555b83;}
+ .mobile{border-radius:25px;}
+}
+@media(max-width:380px){
+ .feature-grid{gap:8px;}
+ .hero:after{letter-spacing:6px;right:-12px;opacity:.5;}
+}
+
 </style>
 </head>
 <body>
@@ -46,7 +178,7 @@ h2{font:700 1.66rem/1.17 Georgia,serif;letter-spacing:-.035em;margin:0 0 10px;co
   <div>
     <section class="mobile" aria-label="Prototipe interaktif RE:VIVE 2035">
       <header class="top">
-        <div class="topbar"><div class="brand">RE<span style="color:#bc775c">:</span>VIVE <span style="font-weight:400">2035</span></div><span class="demobadge">PROTOTIPE UTS</span></div>
+        <div class="topbar"><div class="brand">RE<span style="color:#ec4f99">:</span>VIVE <span style="font-weight:400">2035</span></div><span class="demobadge">PROTOTIPE UTS</span></div>
         <div class="smalltop" id="stepName">Tahap 1 dari 6 · Mulai</div>
         <nav class="thread" id="thread" aria-label="Tahapan simulasi"></nav>
       </header>
@@ -100,7 +232,7 @@ function goto(step){if(step>state.maxStep+1||step<0||step>5)return;
  state.step=step;state.maxStep=Math.max(state.maxStep,step);paint();window.scrollTo({top:0,behavior:'smooth'});}
 function cardThumb(s){return `<span class="garment-holder">${garment(s.shape,s.color)}</span>`;}
 function view(){let s=sample(),o=chosen(),h='';
- if(state.step===0){h=`<section class="hero"><span class="kicker">Your old clothes, your next style</span><h2>Ubah yang lama jadi gaya baru.</h2><p>Jelajahi transformasi pakaian bersama penjahit lokal. Kamu pilih desain; mereka memastikan hasilnya benar-benar bisa dibuat.</p><div class="mini-hero">${garment('shirt','#98b3c8')}<span class="transform-arrow">→</span>${garment('blouse','#98b3c8')}</div></section><div class="feature-grid"><div class="feature"><span class="ico">✦</span><strong>Design Studio</strong><span>Visualisasi pilihan redesign</span></div><div class="feature"><span class="ico">✂</span><strong>Penjahit lokal</strong><span>Validasi dan produksi fisik</span></div><div class="feature"><span class="ico">↻</span><strong>Lebih lama dipakai</strong><span>Fokus pada pakaian yang sudah ada</span></div><div class="feature"><span class="ico">◈</span><strong>Dampak transparan</strong><span>Asumsi terlihat, bukan klaim hijau</span></div></div><div class="finenote"><b>Ini prototipe interaktif.</b> Rekomendasi desain, nama mitra, harga dan indikator dampak merupakan simulasi untuk demonstrasi UTS.</div>`;}
+ if(state.step===0){h=`<section class="hero"><span class="kicker">Your old clothes, your next style</span><h2>Ubah yang lama jadi gaya baru.</h2><p>Jelajahi transformasi pakaian bersama penjahit lokal. Kamu pilih desain; mereka memastikan hasilnya benar-benar bisa dibuat.</p><div class="mini-hero">${garment('shirt','#b4c5f5')}<span class="transform-arrow">→</span>${garment('blouse','#f7a9cb')}</div></section><div class="feature-grid"><div class="feature"><span class="ico">✦</span><strong>Design Studio</strong><span>Visualisasi pilihan redesign</span></div><div class="feature"><span class="ico">✂</span><strong>Penjahit lokal</strong><span>Validasi dan produksi fisik</span></div><div class="feature"><span class="ico">↻</span><strong>Lebih lama dipakai</strong><span>Fokus pada pakaian yang sudah ada</span></div><div class="feature"><span class="ico">◈</span><strong>Dampak transparan</strong><span>Asumsi terlihat, bukan klaim hijau</span></div></div><div class="finenote"><b>Ini prototipe interaktif.</b> Rekomendasi desain, nama mitra, harga dan indikator dampak merupakan simulasi untuk demonstrasi UTS.</div>`;}
  if(state.step===1){h=`<span class="kicker">01 · Wardrobe scan</span><h2>Mulai dari pakaian yang kamu punya.</h2><p class="subtitle">Pakai foto pakaianmu sendiri, atau coba contoh agar kamu bisa menjelajahi seluruh alur.</p><div class="mode-tabs"><button type="button" class="mode" data-mode="photo" aria-pressed="${state.mode==='photo'}">📷 Unggah foto sendiri</button><button type="button" class="mode" data-mode="sample" aria-pressed="${state.mode==='sample'}">✦ Coba contoh</button></div>`;
   if(state.mode==='photo'){h+=`<div class="dropzone"><div class="uploadicon">↥</div><strong>Pilih foto pakaian</strong><p class="subtitle" style="margin:7px 0 4px">JPG, PNG, atau WebP · maks. 8 MB</p><input id="photoFile" class="uploadinput" type="file" accept="image/jpeg,image/png,image/webp"><label for="photoFile" class="file-button">Pilih dari galeri</label>${state.photoURL?`<div class="file-preview"><img id="photoPreview" alt="Foto pakaian yang dipilih"><div><strong>Foto dipilih</strong><small id="photoName"></small><button type="button" class="linkbtn" id="removePhoto">Hapus foto</button></div></div>`:''}</div><p class="subtitle" style="margin-bottom:8px">Pilih kategori pakaian pada foto (tidak dideteksi otomatis):</p>`;}
   else h+='<p class="subtitle" style="margin-bottom:8px">Pilih salah satu sampel untuk simulasi:</p>';
@@ -109,7 +241,7 @@ function view(){let s=sample(),o=chosen(),h='';
   if(state.error)h+=`<div class="error" role="alert">${esc(state.error)}</div>`;
  }
  if(state.step===2){h=`<span class="kicker">02 · Re-design studio</span><h2>Bayangkan desain barunya.</h2><p class="subtitle">Pilih salah satu alternatif untuk ${s.name.toLowerCase()}. Ini katalog ide desain, <b>bukan hasil AI yang memproses foto.</b></p>`;
-  h+=s.options.map((x,i)=>`<button type="button" class="option" data-option="${i}" aria-pressed="${state.option===i}"><span class="garment" style="width:73px;height:79px;background:#edf3ec;border-radius:12px;padding:5px">${garment(x.shape,s.color)}</span><span><strong>${x.name}</strong><span class="badgelow">${x.level}</span><small>${x.note}</small></span></button>`).join('');
+  h+=s.options.map((x,i)=>`<button type="button" class="option" data-option="${i}" aria-pressed="${state.option===i}"><span class="garment" style="width:73px;height:79px;background:#f0eaff;border-radius:12px;padding:5px">${garment(x.shape,s.color)}</span><span><strong>${x.name}</strong><span class="badgelow">${x.level}</span><small>${x.note}</small></span></button>`).join('');
   h+=`<div class="warn"><b>Persetujuan teknis diperlukan.</b> Jenis kain, kekuatan serat, ukuran, dan sisa potongan belum diverifikasi. Penjahit dapat menyarankan desain lain atau menolak pesanan.</div>`;}
  if(state.step===3){h=`<span class="kicker">03 · Virtual concept preview</span><h2>Lihat kemungkinan hasilnya.</h2><p class="subtitle">Transformasi yang dipilih: <b>${o.name}</b>.</p>`;
   if(state.mode==='photo'&&state.photoURL){h+=`<div class="compare-grid"><div class="compare-card"><span class="cornerlabel">Foto asli</span><img id="actualPhoto" alt="Foto pakaian pilihan pengguna"></div><div class="compare-card"><span class="cornerlabel">Sketsa konsep</span>${garment(o.shape,s.color)}</div></div><p class="caption">Sebelah kiri adalah foto asli yang kamu pilih. Sebelah kanan hanyalah ilustrasi desain generik, <b>bukan hasil pengeditan foto atau virtual try-on AI</b>.</p>`;}
@@ -117,7 +249,7 @@ function view(){let s=sample(),o=chosen(),h='';
   h+=`<div class="finenote"><b>Pratinjau konseptual.</b> Hasil nyata tergantung ukuran, ketersediaan kain, konstruksi pakaian, dan hasil verifikasi oleh penjahit.</div>`;
  }
  if(state.step===4){let t=tailors[state.tailor],price=t.price+o.fee;h=`<span class="kicker">04 · Fashion transformation service</span><h2>Pilih mitra transformasi.</h2><p class="subtitle">Simulasikan pemilihan UMKM penjahit dan evaluasi biaya awal. Mitra di bawah adalah nama contoh, bukan bisnis yang sudah terdaftar.</p>`;
-  h+=tailors.map((x,i)=>`<button type="button" class="option" data-tailor="${i}" aria-pressed="${state.tailor===i}"><span style="width:45px;height:45px;border-radius:50%;flex:none;background:#e0ecdc;display:grid;place-items:center;font-weight:900;color:#315a42">${i+1}</span><span><strong>${x.name}</strong><small>Biaya jasa dasar ${money(x.price)} · estimasi ${x.days}</small></span></button>`).join('');
+  h+=tailors.map((x,i)=>`<button type="button" class="option" data-tailor="${i}" aria-pressed="${state.tailor===i}"><span style="width:45px;height:45px;border-radius:50%;flex:none;background:#e9dfff;display:grid;place-items:center;font-weight:900;color:#56409b">${i+1}</span><span><strong>${x.name}</strong><small>Biaya jasa dasar ${money(x.price)} · estimasi ${x.days}</small></span></button>`).join('');
   h+=`<div class="metrics"><div class="metric"><span>Desain pilihan</span><strong>${o.name}</strong></div><div class="metric"><span>Biaya jasa dasar</span><strong>${money(t.price)}</strong></div><div class="metric"><span>Tambahan kompleksitas</span><strong>${money(o.fee)}</strong></div><div class="metric emphasis"><span>Total estimasi</span><strong>${money(price)}</strong></div></div>`;
   h+=state.requested?`<div class="order-status" role="status"><strong>✓ Simulasi pengajuan selesai</strong><p>Dalam layanan sebenarnya, penjahit akan memeriksa kondisi pakaian, mengonfirmasi harga dan jadwal, lalu meminta persetujuan kamu. <b>Tidak ada pesanan atau foto yang dikirim dalam demo ini.</b></p></div>`:`<button type="button" class="action-inline" id="requestBtn">Simulasikan pengajuan desain</button><p class="caption">Klik tombol ini tidak menghubungi atau mengirim data kepada mitra sungguhan.</p>`;}
  if(state.step===5){h=`<span class="kicker">05 · Impact dashboard</span><h2>Lebih dari sekadar penjualan.</h2><p class="subtitle">Ubah asumsi di bawah untuk memahami apa yang perlu dibuktikan sebelum suatu layanan dapat disebut lebih berkelanjutan.</p><div class="stat"><div class="value">${s.weight} g</div><small>Berat pakaian awal (angka contoh, bukan hasil penimbangan)</small></div><div class="sliderline"><span>Asumsi peluang menggantikan pembelian baru</span><strong>${state.sub}%</strong></div><input class="range" type="range" id="subSlider" min="0" max="100" step="5" value="${state.sub}" aria-label="Asumsi peluang menggantikan pembelian baru"><div class="progressbar"><span style="width:${state.sub}%"></span></div><div class="sliderline"><span>Target pakaian hasil transformasi dipakai</span><strong>${state.wears} kali</strong></div><input class="range" type="range" id="wearSlider" min="5" max="100" step="5" value="${state.wears}" aria-label="Target jumlah pemakaian hasil transformasi"><div class="metrics"><div class="metric"><span>Jenis layanan</span><strong>${o.name}</strong></div><div class="metric"><span>Emisi dan penggunaan air</span><strong>Belum dihitung</strong></div><div class="metric"><span>Hasil pengurangan limbah</span><strong>Memerlukan data nyata</strong></div></div><div class="warn"><b>${state.sub<30?'Waspadai rebound effect.':'Interpretasi dampak.'}</b> ${state.sub<30?'Jika transformasi tidak menggantikan pembelian baru, penghematan lingkungan belum tentu terjadi.':'Peluang substitusi dan jumlah pemakaian adalah asumsi pengguna, bukan hasil observasi. Klaim manfaat harus menggunakan perbandingan siklus hidup (LCA), termasuk transportasi, bahan tambahan, energi, serta kebiasaan pemakaian.'}</div><div class="finenote">Indikator untuk uji pilot: jumlah pesanan yang terlaksana, umur pakai tambahan, kepuasan pelanggan, pendapatan penjahit, tingkat substitusi pembelian baru, dan LCA.</div>`;}
