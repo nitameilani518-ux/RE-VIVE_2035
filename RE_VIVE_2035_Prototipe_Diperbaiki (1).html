@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#153b32">
+<meta name="description" content="RE:VIVE 2035 — simulasi interaktif layanan transformasi pakaian lama berbasis prinsip fashion sirkular.">
+<title>RE:VIVE 2035 — Fashion Transformation Studio</title>
+<style>
+:root{
+  --bg:#eff2ea;--panel:#fffdf8;--cream:#f7f7f0;--ink:#1e302b;--forest:#173f34;--forest2:#275a49;
+  --muted:#65776f;--line:#dce5db;--lime:#d8edbb;--lime-deep:#b8da8b;--coral:#f0a38d;
+  --sage:#e7f3e8;--warn:#fff4e2;--radius:20px; color-scheme:light;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 3% 1%,#dcebd6 0%,transparent 38%),radial-gradient(ellipse at 100% 90%,#e2ead7,transparent 44%),var(--bg);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);line-height:1.5}button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed}a{color:inherit}
+.page{max-width:1100px;margin:0 auto;padding:36px 24px 34px;display:grid;grid-template-columns: minmax(260px,1fr) minmax(330px,480px);gap:66px;align-items:start}
+.sidebar{padding-top:32px;position:sticky;top:24px}.eyebrow{display:inline-flex;align-items:center;gap:7px;color:var(--forest2);font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.eyebrow:before{content:"";width:9px;height:9px;background:#70a16c;border-radius:50%}
+.sidebar h1{font:700 clamp(3.4rem,6vw,5.75rem)/.98 Georgia,serif;color:var(--forest);letter-spacing:-.06em;margin:19px 0 14px}.sidebar h1 span{color:#769d61}.sidebar .lead{font-size:1.16rem;line-height:1.65;max-width:480px;color:#455a50}.pillrow{display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}.pill{padding:8px 12px;background:#e3ede2;border:1px solid #ccddc8;border-radius:100px;font-size:.77rem;font-weight:650;color:var(--forest)}
+.sidebar .story{border-top:1px solid #d0dbd0;margin-top:34px;padding-top:22px}.story h3{font:700 1.15rem Georgia,serif;margin:0 0 8px;color:var(--forest)}.story p{font-size:.9rem;color:#63756c;line-height:1.7;margin:0}.story strong{color:var(--forest)}
+.mobile{background:var(--panel);border:1px solid rgba(23,63,52,.14);border-radius:30px;box-shadow:0 24px 75px rgba(23,63,52,.14);overflow:hidden;min-width:0}.top{padding:21px 24px 0}.topbar{display:flex;align-items:center;justify-content:space-between;gap:10px}.brand{font:800 1.18rem Georgia,serif;letter-spacing:-.05em;color:var(--forest)}.brand b{color:#ce7e63}.demobadge{padding:5px 9px;background:var(--sage);color:var(--forest2);font-size:.65rem;border-radius:100px;font-weight:800;letter-spacing:.06em}.smalltop{font-size:.74rem;color:var(--muted);margin:7px 0 10px}.thread{display:flex;gap:4px;align-items:center;margin:15px 0 3px}.stepdot{border:1px solid #d7e2d6;background:#edf3ea;border-radius:50%;height:30px;width:30px;display:grid;place-items:center;flex:0 0 30px;font-size:.73rem;font-weight:800;color:#7c9285}.stepdot.is-current{background:var(--forest);color:#fff;border-color:var(--forest)}.stepdot.is-done{color:var(--forest);background:var(--lime);border-color:#b1cda8}.stepdot[disabled]{opacity:.65}.stepline{height:2px;flex:1;background:#d7e3d7;min-width:2px}.stepline.is-done{background:#9abd8c}
+.screen{padding:24px 24px 13px;min-height:465px;animation:fade .28s ease}@keyframes fade{from{opacity:.45;transform:translateY(7px)}to{opacity:1;transform:none}}
+h2{font:700 1.66rem/1.17 Georgia,serif;letter-spacing:-.035em;margin:0 0 10px;color:var(--forest)}.subtitle{color:var(--muted);font-size:.88rem;margin:0 0 17px;line-height:1.55}.kicker{display:block;color:#668c6f;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;font-weight:850;margin-bottom:10px}p{margin:0 0 13px}.hero{margin:-24px -24px 16px;background:linear-gradient(145deg,#163d32 0%,#275443 80%);padding:33px 26px 27px;color:#fff;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:190px;height:190px;border:1px solid #ffffff24;border-radius:50%;right:-78px;top:-80px}.hero h2{font:700 2.05rem/1.08 Georgia,serif;color:#fff;max-width:350px;letter-spacing:-.05em;margin-top:15px}.hero p{color:#e2eee3;font-size:.88rem;max-width:335px}.mini-hero{display:flex;align-items:center;justify-content:center;gap:13px;background:#ffffff18;border:1px solid #ffffff26;border-radius:22px;padding:16px 8px;margin-top:18px}.mini-hero .garment{height:130px;width:110px}.transform-arrow{font-size:1.8rem;color:var(--lime);font-weight:700}.hero .kicker{color:#cbefa4}
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.feature{padding:13px;background:var(--cream);border:1px solid var(--line);border-radius:15px}.feature strong{display:block;font-size:.79rem;color:var(--forest)}.feature span{color:var(--muted);font-size:.73rem}.feature .ico{font-size:1.22rem;margin-bottom:7px;display:block}
+.mode-tabs{display:flex;gap:8px;margin-bottom:16px}.mode{flex:1;border:1.5px solid #dce4d9;background:#f9fbf7;border-radius:12px;padding:11px 8px;font-weight:750;font-size:.82rem;color:#607168}.mode[aria-pressed=true]{background:var(--forest);color:#fff;border-color:var(--forest)}
+.option{display:flex;align-items:center;gap:11px;width:100%;padding:10px 11px;margin-bottom:9px;background:#fff;border:1.5px solid var(--line);border-radius:16px;text-align:left;color:var(--ink);transition:border-color .15s,background .15s}.option:hover{border-color:#97b7a0}.option[aria-pressed=true]{border-color:#638e73;background:#f0f7eb;box-shadow:0 0 0 2px #d8ebd3}.option strong{display:block;font-size:.89rem;color:var(--forest)}.option small{display:block;color:var(--muted);font-size:.73rem;margin-top:2px;line-height:1.4}.option .garment{width:64px;height:69px;flex:none;background:#edf3ec;border-radius:12px;padding:4px}.badgelow{display:inline-block;padding:2px 8px;border-radius:100px;background:#e5eddb;color:#375c36;font-weight:750;font-size:.67rem;margin-top:5px}
+.dropzone{background:#f5faf3;border:2px dashed #9bbb9d;border-radius:17px;text-align:center;padding:18px 14px;margin-bottom:13px}.dropzone .uploadicon{font-size:1.9rem}.file-button{display:inline-block;background:var(--forest);color:white;border-radius:10px;padding:10px 14px;font-size:.84rem;font-weight:800;cursor:pointer;margin:6px 0}.uploadinput{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}.uploadinput:focus-visible + .file-button{outline:3px solid #d59675;outline-offset:3px}.file-preview{display:flex;align-items:center;gap:12px;padding:10px;background:#fff;border:1px solid var(--line);border-radius:13px;margin-top:12px;text-align:left;min-width:0}.file-preview img{height:65px;width:65px;object-fit:cover;border-radius:9px;background:#ddd}.file-preview div{min-width:0;flex:1}.file-preview small{display:block;color:var(--muted);font-size:.72rem;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.linkbtn{background:none;border:none;padding:4px 0;color:#9c503c;text-decoration:underline;font-size:.76rem;font-weight:700}.finenote{border-left:3px solid #b4d39c;padding:10px 11px;background:#f0f6ea;border-radius:0 10px 10px 0;font-size:.76rem;color:#476253;margin:12px 0}.warn{border-left:3px solid #dfa45d;background:var(--warn);color:#705b3d;border-radius:0 10px 10px 0;padding:10px 11px;font-size:.78rem;line-height:1.5;margin:13px 0}.error{border:1px solid #df9e91;background:#fff0ec;color:#9a4030;padding:9px 10px;border-radius:10px;font-size:.8rem;margin-bottom:12px}
+.compare{position:relative;aspect-ratio:1.13;border-radius:16px;overflow:hidden;background:radial-gradient(circle at center,#fff,#e6eee5);--x:50%}.compare .base,.compare .after{position:absolute;inset:0;display:grid;place-items:center}.compare .base .garment,.compare .after .garment{width:77%;height:84%}.compare .after{clip-path:inset(0 0 0 var(--x));background:#e4f1e7}.compare .divider{position:absolute;top:0;bottom:0;left:var(--x);width:3px;background:#cb7f60;box-shadow:0 0 0 2px #ffffff55}.compare .divider:after{content:"↔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;color:#bf684b;font-weight:800;border-radius:50%;width:30px;height:30px;display:grid;place-items:center;box-shadow:0 2px 6px #0002}.badgeleft,.badgeright{position:absolute;top:12px;z-index:1;background:#173e35;color:#fff;padding:4px 9px;border-radius:30px;font-size:.7rem;font-weight:800}.badgeleft{left:12px}.badgeright{right:12px}
+.range{width:100%;accent-color:#32654e;margin:12px 0 5px}.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.compare-card{position:relative;background:#edf3e9;border:1px solid var(--line);border-radius:15px;overflow:hidden;aspect-ratio:.85;display:grid;place-items:center}.compare-card img{width:100%;height:100%;object-fit:contain;display:block}.compare-card .garment{width:88%;height:88%}.compare-card .cornerlabel{position:absolute;top:8px;left:8px;background:#173e35;color:#fff;padding:4px 7px;font-size:.65rem;border-radius:100px;font-weight:800}.caption{font-size:.72rem;color:var(--muted);margin:8px 0 12px;line-height:1.5}
+.metrics{margin:10px 0}.metric{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:.82rem}.metric strong{text-align:right;color:var(--forest)}.metric span{color:#64776c}.metric.emphasis strong{font-size:1.14rem}.order-status{background:#f0f7ec;border:1px solid #bdd9b7;border-radius:14px;padding:13px;margin-top:12px}.order-status strong{color:var(--forest)}.order-status p{font-size:.79rem;color:#5a735e;margin:5px 0 0}.action-inline{display:block;width:100%;padding:12px;background:var(--forest);color:#fff;border:none;border-radius:12px;margin-top:12px;font-weight:800}.action-inline:disabled{background:#a9b8ae}
+.stat{border:1px solid #dfebdb;background:#f8fbf5;padding:14px;border-radius:16px;margin-bottom:13px}.stat .value{font:700 1.85rem Georgia,serif;color:var(--forest);line-height:1.15}.stat small{color:var(--muted);font-size:.75rem}.sliderline{display:flex;justify-content:space-between;gap:10px;font-size:.82rem;margin:14px 0 0}.sliderline strong{color:var(--forest)}.progressbar{width:100%;height:10px;background:#deeadb;border-radius:100px;overflow:hidden;margin:7px 0}.progressbar span{display:block;background:linear-gradient(90deg,#8bbc73,#3b795a);height:100%;border-radius:100px}
+.nav{display:flex;gap:10px;padding:14px 24px 24px;border-top:1px solid #eef1e9;background:var(--panel)}.btn{width:100%;padding:13px 14px;font-weight:800;border-radius:13px;border:1px solid var(--forest);background:var(--forest);color:#fff}.btn.secondary{width:auto;min-width:100px;color:var(--forest);background:transparent}.btn:disabled{opacity:.38}.btn:focus-visible,.option:focus-visible,.stepdot:focus-visible,.mode:focus-visible{outline:3px solid #d59675;outline-offset:2px}.footer{display:flex;justify-content:center;gap:8px;margin:16px 0 0;color:#76877e;font-size:.7rem;text-align:center}.no-list{padding:0;margin:9px 0 0;list-style:none}.no-list li{font-size:.79rem;color:#617569;padding:5px 0}.no-list li:before{content:"✓";color:#418461;font-weight:900;margin-right:8px}
+@media(max-width:850px){.page{display:block;max-width:540px;padding:12px 13px 28px}.sidebar{position:static;padding:8px 8px 20px}.sidebar h1{font-size:2.8rem;margin:10px 0 8px}.sidebar .lead{font-size:.89rem;margin:0}.sidebar .story,.sidebar .pillrow{display:none}.mobile{border-radius:25px}}
+@media(max-width:380px){.page{padding:6px}.mobile{border-radius:20px}.top{padding:17px 17px 0}.screen{padding:22px 17px 12px}.hero{margin:-22px -17px 15px}.nav{padding:13px 17px 19px}.stepdot{width:28px;height:28px;flex-basis:28px}.feature-grid{gap:8px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+  <aside class="sidebar">
+    <span class="eyebrow">Circular fashion · Konsep 2035</span>
+    <h1>Wear it.<br><span>Reinvent it.</span></h1>
+    <p class="lead">Lemari penuh bukan berarti harus membeli baru. RE:VIVE menghubungkan ide desain ulang dengan keterampilan penjahit lokal—agar pakaian yang kamu miliki bisa digunakan lebih lama.</p>
+    <div class="pillrow"><span class="pill">AI-assisted concept</span><span class="pill">Local tailors</span><span class="pill">Circular service</span></div>
+    <div class="story"><h3>Bukan sekadar aplikasi.</h3><p>Ini adalah simulasi model bisnis <strong>Fashion Transformation as a Service</strong>: konsumen memilih transformasi, mitra UMKM mengerjakan produk fisik, dan dampaknya dievaluasi secara transparan.</p></div>
+  </aside>
+  <div>
+    <section class="mobile" aria-label="Prototipe interaktif RE:VIVE 2035">
+      <header class="top">
+        <div class="topbar"><div class="brand">RE<span style="color:#bc775c">:</span>VIVE <span style="font-weight:400">2035</span></div><span class="demobadge">PROTOTIPE UTS</span></div>
+        <div class="smalltop" id="stepName">Tahap 1 dari 6 · Mulai</div>
+        <nav class="thread" id="thread" aria-label="Tahapan simulasi"></nav>
+      </header>
+      <main class="screen" id="screen" aria-live="polite"></main>
+      <footer class="nav" id="nav"></footer>
+    </section>
+    <p class="footer">Demonstrasi akademik · Tanpa AI atau transaksi sungguhan · Data contoh diberi label</p>
+  </div>
+</div>
+<script>
+"use strict";
+/* Prototipe statis: tidak ada layanan backend, permintaan jaringan untuk foto, model AI,
+   atau pengiriman pesanan. Foto hanya disimpan sementara di memori browser. */
+const shapes={
+  shirt:'M29 14L42 8Q50 18 58 8L71 14L93 40L83 50L73 42L73 91L27 91L27 42L17 50L7 40Z',
+  blouse:'M30 19L42 14Q50 25 58 14L70 19L83 35L72 42L69 37L69 67L31 67L31 37L28 42L17 35Z',
+  tank:'M35 12L43 12Q50 28 57 12L65 12L70 39L66 82L34 82L30 39Z',
+  jacket:'M27 13L42 8Q50 18 58 8L73 13L94 43L85 77L75 75L72 45L72 91L28 91L28 45L25 75L15 77L6 43Z',
+  vest:'M32 10L44 8L50 27L56 8L68 10L72 87L28 87Z',
+  vestcrop:'M32 14L44 12L50 30L56 12L68 14L71 62L29 62Z',
+  jeans:'M28 8L72 8L77 92L54 92L50 38L46 92L23 92Z',
+  skirt:'M30 17L70 17L86 84L14 84Z',
+  pencil:'M32 17L68 17L65 84L35 84Z'
+};
+const seams={
+  shirt:'M42 8L50 22L58 8M50 22V91M30 45H44M55 45H68',blouse:'M42 14L50 25L58 14M31 63H69',tank:'M35 12L30 39M65 12L70 39',
+  jacket:'M42 8L50 24L58 8M50 24V91M27 72H73',vest:'M50 27V87M32 55H44',vestcrop:'M50 30V62',jeans:'M28 15H72M50 15V38M38 8V15M62 8V15',skirt:'M30 24H70M41 24L32 84M59 24L68 84',pencil:'M32 24H68M50 24V84'
+};
+function garment(shape,color){return `<svg class="garment" viewBox="0 0 100 100" role="img" aria-label="Ilustrasi pakaian"><path d="${shapes[shape]}" fill="${color}" stroke="#ffffff" stroke-width="1.3" stroke-linejoin="round"/><path d="${seams[shape]}" fill="none" stroke="#f3fff0" stroke-width="1.2" stroke-linecap="round" opacity=".85"/></svg>`;}
+const samples=[
+ {id:'shirt',name:'Kemeja oversized',shape:'shirt',color:'#91aac4',weight:250,options:[{name:'Blouse crop',shape:'blouse',level:'Sedang',fee:25000,note:'Potongan lengan dan panjang baju disesuaikan; pola akhir harus diperiksa.'},{name:'Atasan sleeveless',shape:'tank',level:'Mudah',fee:0,note:'Lengan dilepas dan tepi kain dirapikan; bergantung kondisi jahitan.'}]},
+ {id:'jacket',name:'Jaket lama',shape:'jacket',color:'#7c987e',weight:600,options:[{name:'Vest panjang',shape:'vest',level:'Sedang',fee:25000,note:'Lengan dilepas; bagian kain bekas bisa dipertimbangkan untuk saku.'},{name:'Vest crop',shape:'vestcrop',level:'Sedang',fee:25000,note:'Panjang badan dipendekkan, sisa kain dievaluasi untuk digunakan kembali.'}]},
+ {id:'jeans',name:'Celana jeans',shape:'jeans',color:'#6788a7',weight:700,options:[{name:'Rok A-line',shape:'skirt',level:'Sulit',fee:50000,note:'Mungkin perlu panel tambahan; ketersediaan kain harus diperiksa.'},{name:'Rok pensil',shape:'pencil',level:'Sedang',fee:25000,note:'Kelayakan sangat dipengaruhi lingkar pinggul dan kondisi jahitan.'}]}
+];
+const tailors=[{name:'Atelier Lokal A',price:90000,days:'5–7 hari'},{name:'Studio Jahit B',price:75000,days:'7–9 hari'},{name:'Mitra Kreatif C',price:110000,days:'4–6 hari'}];
+const stepTitles=['Mulai','Pilih pakaian','Pilih desain','Pratinjau','Simulasi pesanan','Evaluasi dampak'];
+const initial=()=>({step:0,maxStep:0,mode:'sample',category:null,option:null,tailor:0,requested:false,compare:50,sub:40,wears:30,photoURL:null,photoName:'',error:''});
+let state=initial();
+const el=id=>document.getElementById(id);
+const money=n=>'Rp'+n.toLocaleString('id-ID');
+const sample=()=>samples.find(x=>x.id===state.category);
+const chosen=()=>sample()?.options[state.option];
+const esc=s=>String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+function deletePhoto(){if(state.photoURL)URL.revokeObjectURL(state.photoURL);state.photoURL=null;state.photoName='';}
+function reset(){deletePhoto();state=initial();paint();window.scrollTo({top:0,behavior:'smooth'});}
+function setCategory(id){state.category=id;state.option=null;state.requested=false;state.maxStep=Math.min(state.maxStep,1);paint();}
+function goto(step){if(step>state.maxStep+1||step<0||step>5)return;
+ if(step>state.step){if(state.step===1&&(!state.category||(state.mode==='photo'&&!state.photoURL)))return;
+  if(state.step===2&&state.option===null)return;
+  if(state.step===4&&!state.requested)return;}
+ state.step=step;state.maxStep=Math.max(state.maxStep,step);paint();window.scrollTo({top:0,behavior:'smooth'});}
+function cardThumb(s){return `<span class="garment-holder">${garment(s.shape,s.color)}</span>`;}
+function view(){let s=sample(),o=chosen(),h='';
+ if(state.step===0){h=`<section class="hero"><span class="kicker">Your old clothes, your next style</span><h2>Ubah yang lama jadi gaya baru.</h2><p>Jelajahi transformasi pakaian bersama penjahit lokal. Kamu pilih desain; mereka memastikan hasilnya benar-benar bisa dibuat.</p><div class="mini-hero">${garment('shirt','#98b3c8')}<span class="transform-arrow">→</span>${garment('blouse','#98b3c8')}</div></section><div class="feature-grid"><div class="feature"><span class="ico">✦</span><strong>Design Studio</strong><span>Visualisasi pilihan redesign</span></div><div class="feature"><span class="ico">✂</span><strong>Penjahit lokal</strong><span>Validasi dan produksi fisik</span></div><div class="feature"><span class="ico">↻</span><strong>Lebih lama dipakai</strong><span>Fokus pada pakaian yang sudah ada</span></div><div class="feature"><span class="ico">◈</span><strong>Dampak transparan</strong><span>Asumsi terlihat, bukan klaim hijau</span></div></div><div class="finenote"><b>Ini prototipe interaktif.</b> Rekomendasi desain, nama mitra, harga dan indikator dampak merupakan simulasi untuk demonstrasi UTS.</div>`;}
+ if(state.step===1){h=`<span class="kicker">01 · Wardrobe scan</span><h2>Mulai dari pakaian yang kamu punya.</h2><p class="subtitle">Pakai foto pakaianmu sendiri, atau coba contoh agar kamu bisa menjelajahi seluruh alur.</p><div class="mode-tabs"><button type="button" class="mode" data-mode="photo" aria-pressed="${state.mode==='photo'}">📷 Unggah foto sendiri</button><button type="button" class="mode" data-mode="sample" aria-pressed="${state.mode==='sample'}">✦ Coba contoh</button></div>`;
+  if(state.mode==='photo'){h+=`<div class="dropzone"><div class="uploadicon">↥</div><strong>Pilih foto pakaian</strong><p class="subtitle" style="margin:7px 0 4px">JPG, PNG, atau WebP · maks. 8 MB</p><input id="photoFile" class="uploadinput" type="file" accept="image/jpeg,image/png,image/webp"><label for="photoFile" class="file-button">Pilih dari galeri</label>${state.photoURL?`<div class="file-preview"><img id="photoPreview" alt="Foto pakaian yang dipilih"><div><strong>Foto dipilih</strong><small id="photoName"></small><button type="button" class="linkbtn" id="removePhoto">Hapus foto</button></div></div>`:''}</div><p class="subtitle" style="margin-bottom:8px">Pilih kategori pakaian pada foto (tidak dideteksi otomatis):</p>`;}
+  else h+='<p class="subtitle" style="margin-bottom:8px">Pilih salah satu sampel untuk simulasi:</p>';
+  h+=samples.map(x=>`<button type="button" class="option" data-category="${x.id}" aria-pressed="${state.category===x.id}"><span class="garment" style="width:64px;height:69px;background:#edf3ec;border-radius:12px;padding:4px">${garment(x.shape,x.color)}</span><span><strong>${x.name}</strong><small>Berat contoh ilustratif ${x.weight} g</small></span></button>`).join('');
+  h+=`<div class="finenote"><b>Privasi:</b> foto hanya ditampilkan secara lokal di browser. Tidak ada unggahan ke server ataupun analisis AI pada versi ini.</div>`;
+  if(state.error)h+=`<div class="error" role="alert">${esc(state.error)}</div>`;
+ }
+ if(state.step===2){h=`<span class="kicker">02 · Re-design studio</span><h2>Bayangkan desain barunya.</h2><p class="subtitle">Pilih salah satu alternatif untuk ${s.name.toLowerCase()}. Ini katalog ide desain, <b>bukan hasil AI yang memproses foto.</b></p>`;
+  h+=s.options.map((x,i)=>`<button type="button" class="option" data-option="${i}" aria-pressed="${state.option===i}"><span class="garment" style="width:73px;height:79px;background:#edf3ec;border-radius:12px;padding:5px">${garment(x.shape,s.color)}</span><span><strong>${x.name}</strong><span class="badgelow">${x.level}</span><small>${x.note}</small></span></button>`).join('');
+  h+=`<div class="warn"><b>Persetujuan teknis diperlukan.</b> Jenis kain, kekuatan serat, ukuran, dan sisa potongan belum diverifikasi. Penjahit dapat menyarankan desain lain atau menolak pesanan.</div>`;}
+ if(state.step===3){h=`<span class="kicker">03 · Virtual concept preview</span><h2>Lihat kemungkinan hasilnya.</h2><p class="subtitle">Transformasi yang dipilih: <b>${o.name}</b>.</p>`;
+  if(state.mode==='photo'&&state.photoURL){h+=`<div class="compare-grid"><div class="compare-card"><span class="cornerlabel">Foto asli</span><img id="actualPhoto" alt="Foto pakaian pilihan pengguna"></div><div class="compare-card"><span class="cornerlabel">Sketsa konsep</span>${garment(o.shape,s.color)}</div></div><p class="caption">Sebelah kiri adalah foto asli yang kamu pilih. Sebelah kanan hanyalah ilustrasi desain generik, <b>bukan hasil pengeditan foto atau virtual try-on AI</b>.</p>`;}
+  else{h+=`<div class="compare" id="compare" style="--x:${state.compare}%"><div class="base">${garment(s.shape,s.color)}</div><div class="after">${garment(o.shape,s.color)}</div><span class="badgeleft">Sebelum</span><span class="badgeright">Konsep sesudah</span><div class="divider"></div></div><input class="range" type="range" min="0" max="100" value="${state.compare}" id="compareSlider" aria-label="Geser perbandingan sebelum dan sesudah"><p class="caption">Geser untuk membandingkan ilustrasi model lama dan rancangan model baru.</p>`;}
+  h+=`<div class="finenote"><b>Pratinjau konseptual.</b> Hasil nyata tergantung ukuran, ketersediaan kain, konstruksi pakaian, dan hasil verifikasi oleh penjahit.</div>`;
+ }
+ if(state.step===4){let t=tailors[state.tailor],price=t.price+o.fee;h=`<span class="kicker">04 · Fashion transformation service</span><h2>Pilih mitra transformasi.</h2><p class="subtitle">Simulasikan pemilihan UMKM penjahit dan evaluasi biaya awal. Mitra di bawah adalah nama contoh, bukan bisnis yang sudah terdaftar.</p>`;
+  h+=tailors.map((x,i)=>`<button type="button" class="option" data-tailor="${i}" aria-pressed="${state.tailor===i}"><span style="width:45px;height:45px;border-radius:50%;flex:none;background:#e0ecdc;display:grid;place-items:center;font-weight:900;color:#315a42">${i+1}</span><span><strong>${x.name}</strong><small>Biaya jasa dasar ${money(x.price)} · estimasi ${x.days}</small></span></button>`).join('');
+  h+=`<div class="metrics"><div class="metric"><span>Desain pilihan</span><strong>${o.name}</strong></div><div class="metric"><span>Biaya jasa dasar</span><strong>${money(t.price)}</strong></div><div class="metric"><span>Tambahan kompleksitas</span><strong>${money(o.fee)}</strong></div><div class="metric emphasis"><span>Total estimasi</span><strong>${money(price)}</strong></div></div>`;
+  h+=state.requested?`<div class="order-status" role="status"><strong>✓ Simulasi pengajuan selesai</strong><p>Dalam layanan sebenarnya, penjahit akan memeriksa kondisi pakaian, mengonfirmasi harga dan jadwal, lalu meminta persetujuan kamu. <b>Tidak ada pesanan atau foto yang dikirim dalam demo ini.</b></p></div>`:`<button type="button" class="action-inline" id="requestBtn">Simulasikan pengajuan desain</button><p class="caption">Klik tombol ini tidak menghubungi atau mengirim data kepada mitra sungguhan.</p>`;}
+ if(state.step===5){h=`<span class="kicker">05 · Impact dashboard</span><h2>Lebih dari sekadar penjualan.</h2><p class="subtitle">Ubah asumsi di bawah untuk memahami apa yang perlu dibuktikan sebelum suatu layanan dapat disebut lebih berkelanjutan.</p><div class="stat"><div class="value">${s.weight} g</div><small>Berat pakaian awal (angka contoh, bukan hasil penimbangan)</small></div><div class="sliderline"><span>Asumsi peluang menggantikan pembelian baru</span><strong>${state.sub}%</strong></div><input class="range" type="range" id="subSlider" min="0" max="100" step="5" value="${state.sub}" aria-label="Asumsi peluang menggantikan pembelian baru"><div class="progressbar"><span style="width:${state.sub}%"></span></div><div class="sliderline"><span>Target pakaian hasil transformasi dipakai</span><strong>${state.wears} kali</strong></div><input class="range" type="range" id="wearSlider" min="5" max="100" step="5" value="${state.wears}" aria-label="Target jumlah pemakaian hasil transformasi"><div class="metrics"><div class="metric"><span>Jenis layanan</span><strong>${o.name}</strong></div><div class="metric"><span>Emisi dan penggunaan air</span><strong>Belum dihitung</strong></div><div class="metric"><span>Hasil pengurangan limbah</span><strong>Memerlukan data nyata</strong></div></div><div class="warn"><b>${state.sub<30?'Waspadai rebound effect.':'Interpretasi dampak.'}</b> ${state.sub<30?'Jika transformasi tidak menggantikan pembelian baru, penghematan lingkungan belum tentu terjadi.':'Peluang substitusi dan jumlah pemakaian adalah asumsi pengguna, bukan hasil observasi. Klaim manfaat harus menggunakan perbandingan siklus hidup (LCA), termasuk transportasi, bahan tambahan, energi, serta kebiasaan pemakaian.'}</div><div class="finenote">Indikator untuk uji pilot: jumlah pesanan yang terlaksana, umur pakai tambahan, kepuasan pelanggan, pendapatan penjahit, tingkat substitusi pembelian baru, dan LCA.</div>`;}
+ return h;}
+function paint(){
+ el('stepName').textContent=`Tahap ${state.step+1} dari 6 · ${stepTitles[state.step]}`;
+ let progress='';stepTitles.forEach((title,i)=>{if(i)progress+=`<span class="stepline ${i<=state.step?'is-done':''}"></span>`;progress+=`<button type="button" class="stepdot ${i===state.step?'is-current':i<state.step?'is-done':''}" data-goto="${i}" aria-label="Ke tahap ${i+1}: ${title}" aria-current="${i===state.step?'step':'false'}" ${i>state.maxStep?'disabled':''}>${i+1}</button>`;});el('thread').innerHTML=progress;
+ el('screen').innerHTML=view();
+ const allowNext=(state.step===1?Boolean(state.category)&&(state.mode==='sample'||Boolean(state.photoURL)):state.step===2?state.option!==null:state.step===4?state.requested:true);
+ el('nav').innerHTML=`${state.step?'<button type="button" class="btn secondary" id="backBtn">Kembali</button>':''}<button type="button" class="btn" id="nextBtn" ${!allowNext?'disabled':''}>${state.step===0?'Mulai eksplorasi':state.step===5?'Ulangi simulasi':'Lanjut'} ${state.step===5?'↻':'→'}</button>`;
+ el('nextBtn').addEventListener('click',()=>state.step===5?reset():goto(state.step+1));
+ if(el('backBtn'))el('backBtn').addEventListener('click',()=>goto(state.step-1));
+ document.querySelectorAll('[data-goto]').forEach(e=>e.addEventListener('click',()=>goto(Number(e.dataset.goto))));
+ document.querySelectorAll('[data-mode]').forEach(e=>e.addEventListener('click',()=>{state.mode=e.dataset.mode;state.category=null;state.option=null;state.requested=false;state.maxStep=Math.min(state.maxStep,1);state.error='';paint()}));
+ document.querySelectorAll('[data-category]').forEach(e=>e.addEventListener('click',()=>setCategory(e.dataset.category)));
+ document.querySelectorAll('[data-option]').forEach(e=>e.addEventListener('click',()=>{state.option=Number(e.dataset.option);state.requested=false;state.maxStep=Math.min(state.maxStep,2);paint()}));
+ document.querySelectorAll('[data-tailor]').forEach(e=>e.addEventListener('click',()=>{state.tailor=Number(e.dataset.tailor);state.requested=false;state.maxStep=Math.min(state.maxStep,4);paint()}));
+ if(el('photoFile'))el('photoFile').addEventListener('change',onUpload);
+ if(el('removePhoto'))el('removePhoto').addEventListener('click',()=>{deletePhoto();paint()});
+ if(el('photoPreview')){el('photoPreview').src=state.photoURL;el('photoName').textContent=state.photoName;}
+ if(el('actualPhoto'))el('actualPhoto').src=state.photoURL;
+ if(el('compareSlider'))el('compareSlider').addEventListener('input',e=>{state.compare=Number(e.target.value);el('compare').style.setProperty('--x',state.compare+'%')});
+ if(el('requestBtn'))el('requestBtn').addEventListener('click',()=>{state.requested=true;paint()});
+ // Change only the values in view, not the slider element itself, while dragging.
+ if(el('subSlider'))el('subSlider').addEventListener('input',e=>{state.sub=Number(e.target.value);const y=el('screen');const label=y.querySelector('.sliderline strong');label.textContent=state.sub+'%';y.querySelector('.progressbar span').style.width=state.sub+'%';});
+ if(el('subSlider'))el('subSlider').addEventListener('change',()=>paint());
+ if(el('wearSlider'))el('wearSlider').addEventListener('input',e=>{state.wears=Number(e.target.value);el('screen').querySelectorAll('.sliderline strong')[1].textContent=state.wears+' kali';});
+}
+function onUpload(event){const file=event.target.files?.[0];if(!file)return;
+ if(!['image/jpeg','image/png','image/webp'].includes(file.type)){state.error='Format belum didukung. Pilih JPG, PNG, atau WebP.';paint();return;}
+ if(file.size>8*1024*1024){state.error='Ukuran foto terlalu besar. Gunakan file maksimal 8 MB.';paint();return;}
+ deletePhoto();state.photoURL=URL.createObjectURL(file);state.photoName=file.name;state.error='';paint();
+}
+window.addEventListener('beforeunload',deletePhoto);
+paint();
+</script>
+</body>
+</html>
